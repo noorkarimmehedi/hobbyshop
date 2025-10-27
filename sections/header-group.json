@@ -61,9 +61,9 @@
       "settings": {
         "enable_sticky": true,
         "hide_on_scroll": false,
-        "logo": "shopify://shop_images/Horizontal-Transparent.png",
+        "logo": "shopify://shop_images/logo.svg",
         "logo_max_width": 165,
-        "logo_mobile_max_width": 85,
+        "logo_mobile_max_width": 125,
         "menu": "main-menu",
         "sidebar_menu": "",
         "secondary_menu": "",
