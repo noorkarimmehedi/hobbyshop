@@ -499,6 +499,7 @@
         "16644243327ba53d2a-1",
         "16644243327ba53d2a-0"
       ],
+      "disabled": true,
       "settings": {
         "full_width": true,
         "content_size": "medium",
