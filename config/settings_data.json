@@ -32,7 +32,7 @@
     "heading_letter_spacing": -2,
     "text_font": "din_next_n4",
     "show_page_transition": true,
-    "reduce_drawer_animation": true,
+    "reduce_drawer_animation": false,
     "heading_apparition": "split_fade",
     "show_quick_buy": false,
     "product_color_display": "swatch",
@@ -40,19 +40,7 @@
     "cart_icon": "tote_bag",
     "checkout_accent_color": "#f0c417",
     "checkout_button_color": "#1a1a1a",
-    "content_for_index": [],
-    "blocks": {
-      "9696655121035291526": {
-        "type": "shopify://apps/rapi/blocks/app-embed/99617c17-a32b-4e70-a883-7a155610d032",
-        "disabled": false,
-        "settings": {}
-      },
-      "13669795325273674392": {
-        "type": "shopify://apps/releasit-cod-form/blocks/app-embed/72faf214-4174-4fec-886b-0d0e8d3af9a2",
-        "disabled": false,
-        "settings": {}
-      }
-    }
+    "content_for_index": []
   },
   "presets": {
     "Sound": {
