@@ -161,6 +161,7 @@
     },
     "scrolling-text": {
       "type": "scrolling-text",
+      "disabled": true,
       "settings": {
         "full_width": true,
         "text": "আমাদের যে কোন পণ্য অর্ডার করতে কল বা WhatsApp করুন:  +8801324501940 |  হট লাইন: 09638-779900",
@@ -186,7 +187,7 @@
         "products_per_row_mobile": "2",
         "products_per_row_desktop": 4,
         "subheading": "",
-        "title": "ALL PRODUCTS",
+        "title": "NEW ARRIVALS",
         "content": "",
         "link_url": "",
         "link_text": "",
@@ -338,6 +339,7 @@
         "allow_transparent_header": false,
         "enable_parallax": false,
         "image_size": "auto",
+        "image": "shopify://shop_images/imgi_104_Hobby-shop-facebook-cover-updated-1-2048x899.webp",
         "mobile_text_position": "place-self-center text-center",
         "desktop_text_position": "sm:place-self-center sm:text-center",
         "text_color": "#ffffff",
@@ -351,6 +353,7 @@
         "item-1": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Main-Post-2.webp",
             "title": "",
             "heading_tag": "h4",
             "link_url": "shopify://products/glass-cups-with-bamboo-lid-and-straw",
