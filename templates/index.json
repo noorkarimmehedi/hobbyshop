@@ -15,8 +15,6 @@
         "slide-1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/le-quan-2vTKEbcd43M-unsplash.jpg",
-            "mobile_image": "shopify://shop_images/le-quan-2vTKEbcd43M-unsplash_41772934-fa34-497c-90d1-159eb86cc38a.jpg",
             "content_max_width": 860,
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
@@ -78,7 +76,6 @@
         "1664424046b00c932c-0": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/617Xie9ePfL._AC_SL1500.jpg",
             "stretch_image": true,
             "link_text": "",
             "link_url": "shopify://products/fruit-drain-and-storage-basket-with-lid",
@@ -91,7 +88,6 @@
         "1664424046b00c932c-1": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/bamboojar4_5b372d51-a6d5-467a-ab5a-8fa1f8a022cf.jpg",
             "stretch_image": true,
             "link_text": "",
             "link_url": "shopify://products/glass-food-container-square-glass-jars-with-bamboo-lids",
@@ -104,7 +100,6 @@
         "1664424046b00c932c-2": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/813j9smA7FL._AC_SL1500.jpg",
             "stretch_image": true,
             "link_text": "",
             "link_url": "shopify://products/stainless-steel-kitchen-sink-holder",
@@ -166,8 +161,8 @@
       "type": "scrolling-text",
       "settings": {
         "full_width": true,
-        "text": "আমাদের যে কোন পণ্য অর্ডার করতে কল বা WhatsApp করুন:  +8801819502705",
-        "text_size": "medium",
+        "text": "আমাদের যে কোন পণ্য অর্ডার করতে কল বা WhatsApp করুন:  +8801324501940 |  হট লাইন: 09638-779900",
+        "text_size": "small",
         "text_style": "outline",
         "scrolling_mode": "auto",
         "scrolling_speed": 5,
@@ -223,7 +218,6 @@
           "type": "collection",
           "settings": {
             "collection": "all-product",
-            "image": "shopify://shop_images/71uV0kz-adL._AC_SX679.jpg",
             "subheading": "",
             "title": "",
             "url": "",
@@ -238,7 +232,6 @@
           "type": "collection",
           "settings": {
             "collection": "pre-booking",
-            "image": "shopify://shop_images/813j9smA7FL._AC_SL1500.jpg",
             "subheading": "",
             "title": "",
             "url": "",
@@ -343,7 +336,6 @@
         "allow_transparent_header": false,
         "enable_parallax": false,
         "image_size": "auto",
-        "image": "shopify://shop_images/jason-leung-jWU9FpLW7fI-unsplash.jpg",
         "mobile_text_position": "place-self-center text-center",
         "desktop_text_position": "sm:place-self-center sm:text-center",
         "text_color": "#ffffff",
@@ -357,7 +349,6 @@
         "item-1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/71sG4hiNrkL._AC_SL1500.jpg",
             "title": "",
             "heading_tag": "h4",
             "link_url": "shopify://products/glass-cups-with-bamboo-lid-and-straw",
@@ -379,7 +370,6 @@
         "item-2": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/813j9smA7FL._AC_SL1500.jpg",
             "title": "",
             "heading_tag": "h4",
             "link_url": "shopify://products/stainless-steel-kitchen-sink-holder",
@@ -401,7 +391,6 @@
         "item-3": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/bamboojar4.jpg",
             "title": "",
             "heading_tag": "h4",
             "link_url": "shopify://products/glass-food-container-square-glass-jars-with-bamboo-lids",
@@ -423,7 +412,6 @@
         "29246d34-c6e0-4373-84f6-b15e57736a00": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/71uV0kz-adL._AC_SX679.jpg",
             "title": "",
             "heading_tag": "h4",
             "link_url": "shopify://products/fruit-drain-and-storage-basket-with-lid",
@@ -568,7 +556,6 @@
       ],
       "settings": {
         "full_width": true,
-        "image": "shopify://shop_images/71cJM04DgmL._AC_SL1500.jpg",
         "title": "",
         "content": "",
         "button_text": "",
@@ -595,7 +582,6 @@
         "1664424486a2b084ab-0": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/1615CC7D-B81B-466C-A426-3FFD22B5A2B8.png",
             "image_rotation_degrees": -2,
             "subheading": "",
             "title": "Heading 1",
@@ -866,7 +852,7 @@
           "type": "item",
           "settings": {
             "title": "Any question?",
-            "content": "<p>You can call us at +8801819502705. We will be happy to assist you.</p>"
+            "content": "<p>You can call us at 09638-779900. We will be happy to assist you.</p>"
           }
         }
       },
