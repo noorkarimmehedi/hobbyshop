@@ -282,7 +282,7 @@
             "slide_width_mobile": 250,
             "slide_gap": 20,
             "section_padding_top": 60,
-            "section_padding_bottom": 60,
+            "section_padding_bottom": 100,
             "video_border_radius": 0,
             "video_background": "#000000",
             "background_color": "#f0f0f0",
