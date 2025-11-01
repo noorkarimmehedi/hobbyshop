@@ -33,7 +33,7 @@
     "text_font": "din_next_n4",
     "show_page_transition": true,
     "reduce_drawer_animation": true,
-    "reduce_menu_animation": true,
+    "reduce_menu_animation": false,
     "heading_apparition": "split_fade",
     "show_quick_buy": false,
     "product_color_display": "swatch",
