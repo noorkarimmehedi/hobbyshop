@@ -1,6 +1,899 @@
+{% doc %}
+  @prompt
+    generate me a category slider for me  , it's good but i want something like category size can be customizable can be option for squared shape or circle shape, i want at least 20 collections , option to add collections image , i can customise the section background color it's not working. also need option to add collections border color 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-category-slider-{{ ai_gen_id }} {
+    padding: {{ block.settings.section_padding }}px 0;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-category-slider__container-{{ ai_gen_id }} {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .ai-category-slider__header-{{ ai_gen_id }} {
+    text-align: {{ block.settings.heading_alignment }};
+    margin-bottom: 40px;
+  }
+
+  .ai-category-slider__title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.heading_color }};
+    margin: 0 0 12px;
+    font-weight: 700;
+  }
+
+  .ai-category-slider__subtitle-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subheading_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0;
+  }
+
+  .ai-category-slider__wrapper-{{ ai_gen_id }} {
+    position: relative;
+  }
+
+  .ai-category-slider__track-{{ ai_gen_id }} {
+    display: flex;
+    gap: {{ block.settings.card_gap }}px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 10px 0;
+  }
+
+  .ai-category-slider__track-{{ ai_gen_id }}::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ai-category-slider__card-{{ ai_gen_id }} {
+    flex: 0 0 {{ block.settings.category_size }}px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    background-color: {{ block.settings.card_background }};
+    border-radius: {% if block.settings.category_shape == 'circle' %}50%{% else %}{{ block.settings.card_border_radius }}px{% endif %};
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: {{ block.settings.card_border_width }}px solid {{ block.settings.card_border_color }};
+  }
+
+  .ai-category-slider__card-{{ ai_gen_id }}:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  .ai-category-slider__image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+    background-color: #f4f4f4;
+  }
+
+  .ai-category-slider__image-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-category-slider__image-placeholder-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+  }
+
+  .ai-category-slider__image-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .ai-category-slider__content-{{ ai_gen_id }} {
+    padding: {{ block.settings.card_padding }}px;
+    text-align: center;
+    {% if block.settings.category_shape == 'circle' %}
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+      color: #ffffff;
+    {% endif %}
+  }
+
+  .ai-category-slider__category-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.category_title_size }}px;
+    color: {% if block.settings.category_shape == 'circle' %}#ffffff{% else %}{{ block.settings.card_text_color }}{% endif %};
+    margin: 0 0 8px;
+    font-weight: 600;
+  }
+
+  .ai-category-slider__category-count-{{ ai_gen_id }} {
+    font-size: {{ block.settings.category_count_size }}px;
+    color: {% if block.settings.category_shape == 'circle' %}#ffffff{% else %}{{ block.settings.card_text_color }}{% endif %};
+    opacity: 0.9;
+    margin: 0;
+  }
+
+  .ai-category-slider__nav-{{ ai_gen_id }} {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    background-color: {{ block.settings.nav_button_background }};
+    color: {{ block.settings.nav_button_color }};
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .ai-category-slider__nav-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.nav_button_hover_background }};
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  .ai-category-slider__nav-{{ ai_gen_id }}:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  .ai-category-slider__nav-{{ ai_gen_id }}:disabled:hover {
+    transform: translateY(-50%) scale(1);
+  }
+
+  .ai-category-slider__nav--prev-{{ ai_gen_id }} {
+    left: -24px;
+  }
+
+  .ai-category-slider__nav--next-{{ ai_gen_id }} {
+    right: -24px;
+  }
+
+  .ai-category-slider__nav-{{ ai_gen_id }} svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-category-slider__card-{{ ai_gen_id }} {
+      flex: 0 0 {{ block.settings.category_size | times: 0.7 }}px;
+    }
+
+    .ai-category-slider__nav-{{ ai_gen_id }} {
+      display: none;
+    }
+
+    .ai-category-slider__title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.7 }}px;
+    }
+
+    .ai-category-slider__subtitle-{{ ai_gen_id }} {
+      font-size: {{ block.settings.subheading_size | times: 0.85 }}px;
+    }
+  }
+{% endstyle %}
+
+<category-slider-{{ ai_gen_id }}
+  class="ai-category-slider-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-category-slider__container-{{ ai_gen_id }}">
+    {% if block.settings.heading != blank or block.settings.subheading != blank %}
+      <div class="ai-category-slider__header-{{ ai_gen_id }}">
+        {% if block.settings.heading != blank %}
+          <h2 class="ai-category-slider__title-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+        {% endif %}
+        {% if block.settings.subheading != blank %}
+          <p class="ai-category-slider__subtitle-{{ ai_gen_id }}">{{ block.settings.subheading }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="ai-category-slider__wrapper-{{ ai_gen_id }}">
+      <button
+        class="ai-category-slider__nav-{{ ai_gen_id }} ai-category-slider__nav--prev-{{ ai_gen_id }}"
+        aria-label="Previous categories"
+        data-direction="prev"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <div class="ai-category-slider__track-{{ ai_gen_id }}">
+        {% for i in (1..20) %}
+          {% liquid
+            assign collection_key = 'collection_' | append: i
+            assign custom_image_key = 'custom_image_' | append: i
+            assign collection = block.settings[collection_key]
+            assign custom_image = block.settings[custom_image_key]
+          %}
+
+          {% if collection != blank %}
+            <a
+              href="{{ collection.url }}"
+              class="ai-category-slider__card-{{ ai_gen_id }}"
+            >
+              <div class="ai-category-slider__image-wrapper-{{ ai_gen_id }}">
+                {% if custom_image %}
+                  <img
+                    src="{{ custom_image | image_url: width: 600 }}"
+                    alt="{{ custom_image.alt | escape }}"
+                    class="ai-category-slider__image-{{ ai_gen_id }}"
+                    loading="lazy"
+                    width="600"
+                    height="600"
+                  >
+                {% elsif collection.featured_image %}
+                  <img
+                    src="{{ collection.featured_image | image_url: width: 600 }}"
+                    alt="{{ collection.featured_image.alt | escape }}"
+                    class="ai-category-slider__image-{{ ai_gen_id }}"
+                    loading="lazy"
+                    width="600"
+                    height="600"
+                  >
+                {% else %}
+                  <div class="ai-category-slider__image-placeholder-{{ ai_gen_id }}">
+                    {{ 'collection-1' | placeholder_svg_tag }}
+                  </div>
+                {% endif %}
+                <div class="ai-category-slider__content-{{ ai_gen_id }}">
+                  <h3 class="ai-category-slider__category-title-{{ ai_gen_id }}">
+                    {{ collection.title }}
+                  </h3>
+                  {% if block.settings.show_product_count %}
+                    <p class="ai-category-slider__category-count-{{ ai_gen_id }}">
+                      {{ collection.products_count }}
+                      {% if collection.products_count == 1 %}
+                        product
+                      {% else %}
+                        products
+                      {% endif %}
+                    </p>
+                  {% endif %}
+                </div>
+              </div>
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <button
+        class="ai-category-slider__nav-{{ ai_gen_id }} ai-category-slider__nav--next-{{ ai_gen_id }}"
+        aria-label="Next categories"
+        data-direction="next"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+  </div>
+</category-slider-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class CategorySlider{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.track = this.querySelector('.ai-category-slider__track-{{ ai_gen_id }}');
+        this.prevButton = this.querySelector('.ai-category-slider__nav--prev-{{ ai_gen_id }}');
+        this.nextButton = this.querySelector('.ai-category-slider__nav--next-{{ ai_gen_id }}');
+      }
+
+      connectedCallback() {
+        this.setupNavigation();
+        this.updateButtonStates();
+        this.track.addEventListener('scroll', () => this.updateButtonStates());
+      }
+
+      setupNavigation() {
+        this.prevButton.addEventListener('click', () => this.scroll('prev'));
+        this.nextButton.addEventListener('click', () => this.scroll('next'));
+      }
+
+      scroll(direction) {
+        const categorySize = {{ block.settings.category_size }};
+        const gap = {{ block.settings.card_gap }};
+        const scrollAmount = (categorySize + gap) * 2;
+
+        if (direction === 'prev') {
+          this.track.scrollLeft -= scrollAmount;
+        } else {
+          this.track.scrollLeft += scrollAmount;
+        }
+      }
+
+      updateButtonStates() {
+        const isAtStart = this.track.scrollLeft <= 0;
+        const isAtEnd = this.track.scrollLeft + this.track.clientWidth >= this.track.scrollWidth - 1;
+
+        this.prevButton.disabled = isAtStart;
+        this.nextButton.disabled = isAtEnd;
+      }
+    }
+
+    customElements.define('category-slider-{{ ai_gen_id }}', CategorySlider{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Category slider",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shop by Category"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Explore our collections"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "subheading_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subheading size",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Collection 1"
+    },
+    {
+      "type": "collection",
+      "id": "collection_1",
+      "label": "Collection"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_image_1",
+      "label": "Custom image",
+      "info": "Optional. Overrides collection image"
+    },
+    {
+      "type": "header",
+      "content": "Collection 2"
+    },
+    {
+      "type": "collection",
+      "id": "collection_2",
+      "label": "Collection"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_image_2",
+      "label": "Custom image",
+      "info": "Optional. Overrides collection image"
+    },
+    {
+      "type": "header",
+      "content": "Collection 3"
+    },
+    {
+      "type": "collection",
+      "id": "collection_3",
+      "label": "Collection"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_image_3",
+      "label": "Custom image",
+      "info": "Optional. Overrides collection image"
+    },
+    {
+      "type": "header",
+      "content": "Collection 4"
+    },
+    {
+      "type": "collection",
+      "id": "collection_4",
+      "label": "Collection"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_image_4",
+      "label": "Custom image",
+      "info": "Optional. Overrides collection image"
+    },
+    {
+      "type": "header",
+      "content": "Collection 5"
+    },
+    {
+      "type": "collection",
+      "id": "collection_5",
+      "label": "Collection"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_image_5",
+      "label": "Custom image",
+      "info": "Optional. Overrides collection image"
+    },
+    {
+      "type": "header",
+      "content": "Collection 6"
+    },
+    {
+      "type": "collection",
+      "id": "collection_6",
+      "label": "Collection"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_image_6",
+      "label": "Custom image",
+      "info": "Optional. Overrides collection image"
+    },
+    {
+      "type": "header",
+      "content": "Collection 7"
+    },
+    {
+      "type": "collection",
+      "id": "collection_7",
+      "label": "Collection"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_image_7",
+      "label": "Custom image",
+      "info": "Optional. Overrides collection image"
+    },
+    {
+      "type": "header",
+      "content": "Collection 8"
+    },
+    {
+      "type": "collection",
+      "id": "collection_8",
+      "label": "Collection"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_image_8",
+      "label": "Custom image",
+      "info": "Optional. Overrides collection image"
+    },
+    {
+      "type": "header",
+      "content": "Collection 9"
+    },
+    {
+      "type": "collection",
+      "id": "collection_9",
+      "label": "Collection"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_image_9",
+      "label": "Custom image",
+      "info": "Optional. Overrides collection image"
+    },
+    {
+      "type": "header",
+      "content": "Collection 10"
+    },
+    {
+      "type": "collection",
+      "id": "collection_10",
+      "label": "Collection"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_image_10",
+      "label": "Custom image",
+      "info": "Optional. Overrides collection image"
+    },
+    {
+      "type": "header",
+      "content": "Collection 11"
+    },
+    {
+      "type": "collection",
+      "id": "collection_11",
+      "label": "Collection"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_image_11",
+      "label": "Custom image",
+      "info": "Optional. Overrides collection image"
+    },
+    {
+      "type": "header",
+      "content": "Collection 12"
+    },
+    {
+      "type": "collection",
+      "id": "collection_12",
+      "label": "Collection"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_image_12",
+      "label": "Custom image",
+      "info": "Optional. Overrides collection image"
+    },
+    {
+      "type": "header",
+      "content": "Collection 13"
+    },
+    {
+      "type": "collection",
+      "id": "collection_13",
+      "label": "Collection"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_image_13",
+      "label": "Custom image",
+      "info": "Optional. Overrides collection image"
+    },
+    {
+      "type": "header",
+      "content": "Collection 14"
+    },
+    {
+      "type": "collection",
+      "id": "collection_14",
+      "label": "Collection"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_image_14",
+      "label": "Custom image",
+      "info": "Optional. Overrides collection image"
+    },
+    {
+      "type": "header",
+      "content": "Collection 15"
+    },
+    {
+      "type": "collection",
+      "id": "collection_15",
+      "label": "Collection"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_image_15",
+      "label": "Custom image",
+      "info": "Optional. Overrides collection image"
+    },
+    {
+      "type": "header",
+      "content": "Collection 16"
+    },
+    {
+      "type": "collection",
+      "id": "collection_16",
+      "label": "Collection"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_image_16",
+      "label": "Custom image",
+      "info": "Optional. Overrides collection image"
+    },
+    {
+      "type": "header",
+      "content": "Collection 17"
+    },
+    {
+      "type": "collection",
+      "id": "collection_17",
+      "label": "Collection"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_image_17",
+      "label": "Custom image",
+      "info": "Optional. Overrides collection image"
+    },
+    {
+      "type": "header",
+      "content": "Collection 18"
+    },
+    {
+      "type": "collection",
+      "id": "collection_18",
+      "label": "Collection"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_image_18",
+      "label": "Custom image",
+      "info": "Optional. Overrides collection image"
+    },
+    {
+      "type": "header",
+      "content": "Collection 19"
+    },
+    {
+      "type": "collection",
+      "id": "collection_19",
+      "label": "Collection"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_image_19",
+      "label": "Custom image",
+      "info": "Optional. Overrides collection image"
+    },
+    {
+      "type": "header",
+      "content": "Collection 20"
+    },
+    {
+      "type": "collection",
+      "id": "collection_20",
+      "label": "Collection"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_image_20",
+      "label": "Custom image",
+      "info": "Optional. Overrides collection image"
+    },
+    {
+      "type": "header",
+      "content": "Category style"
+    },
+    {
+      "type": "select",
+      "id": "category_shape",
+      "label": "Category shape",
+      "options": [
+        {
+          "value": "square",
+          "label": "Square"
+        },
+        {
+          "value": "circle",
+          "label": "Circle"
+        }
+      ],
+      "default": "square"
+    },
+    {
+      "type": "range",
+      "id": "category_size",
+      "min": 100,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "label": "Category size",
+      "default": 200
+    },
+    {
+      "type": "checkbox",
+      "id": "show_product_count",
+      "label": "Show product count",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Gap between categories",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Text padding",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "info": "Only applies to square shape",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "card_border_width",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "category_title_size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Category title size",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "category_count_size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Product count size",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section background",
+      "default": "#f0f0f0"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Category background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_text_color",
+      "label": "Category text",
+      "info": "Only applies to square shape",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Category border",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "color",
+      "id": "nav_button_background",
+      "label": "Navigation button background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "nav_button_color",
+      "label": "Navigation button icon",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "nav_button_hover_background",
+      "label": "Navigation button hover",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Section padding",
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "Category slider"
+    }
+  ]
+}
 {% endschema %}
