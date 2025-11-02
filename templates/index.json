@@ -236,6 +236,65 @@
         "text_gradient": ""
       }
     },
+    "17620670761a223e87": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_cfcba58_ePbigR": {
+          "type": "ai_gen_block_cfcba58",
+          "settings": {
+            "heading": "Shop by Category",
+            "subheading": "Explore our collections",
+            "heading_alignment": "center",
+            "heading_size": 36,
+            "subheading_size": 16,
+            "collection_1": "all-product",
+            "collection_2": "frontpage",
+            "collection_3": "all-product",
+            "collection_4": "frontpage",
+            "collection_5": "",
+            "collection_6": "",
+            "collection_7": "",
+            "collection_8": "",
+            "collection_9": "",
+            "collection_10": "",
+            "collection_11": "",
+            "collection_12": "",
+            "collection_13": "",
+            "collection_14": "",
+            "collection_15": "",
+            "collection_16": "",
+            "collection_17": "",
+            "collection_18": "",
+            "collection_19": "",
+            "collection_20": "",
+            "category_shape": "circle",
+            "category_size": 200,
+            "show_product_count": true,
+            "card_gap": 14,
+            "card_padding": 20,
+            "card_border_radius": 24,
+            "card_border_width": 0,
+            "category_title_size": 18,
+            "category_count_size": 14,
+            "background_color": "#ffe603",
+            "heading_color": "#1a1a1a",
+            "text_color": "#1a1a1a",
+            "card_background": "#ffffff",
+            "card_text_color": "#1a1a1a",
+            "card_border_color": "#1a1a1a",
+            "nav_button_background": "#ffffff",
+            "nav_button_color": "#1a1a1a",
+            "nav_button_hover_background": "#1a1a1a",
+            "section_padding": 60
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_cfcba58_ePbigR"
+      ],
+      "settings": {}
+    },
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
@@ -1029,6 +1088,7 @@
     "176157944692f5db47",
     "image-link-blocks",
     "scrolling-text",
+    "17620670761a223e87",
     "featured-collection",
     "1762005974ff0eccac",
     "collection-list",
