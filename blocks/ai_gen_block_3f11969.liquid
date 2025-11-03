@@ -1,33 +1,14 @@
-{% doc %}
-  @prompt
-    generate a category section where in mobile version every row will have 3 categories and should add image option also the category card size should be adjustable , change these to: Border
-    Border width
-    
-    1
-    Border color
-    
-    #E0E0E0
-    Hover border color
-    
-    #CCCCCC
-    Border radius
-    
-    8
-    Shadow
-    Horizontal offset
-    
-    0
-    Vertical offset
-    
-    4
-    Blur radius
-    
-    8
-    Shadow opacity
-    
-    0
-    , i should have the option to add collections directly from shopify , should have the option for the collection name text on overlay text or below the image. should be slider , should have the option for 21 collections instead of 12. also should add option for adjusting the padding 
-{% enddoc %}
+{% comment %}
+  Category Slider Section
+  Features:
+  - 21 collection slots
+  - Responsive slider with 3 columns on mobile
+  - Adjustable card size and styling
+  - Title overlay or below image options
+  - Full customization for borders, shadows, padding
+  - Section heading with customization
+{% endcomment %}
+
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
 {% style %}
@@ -36,6 +17,14 @@
     overflow: hidden;
     position: relative;
     padding: {{ block.settings.padding_top }}px {{ block.settings.padding_horizontal }}px {{ block.settings.padding_bottom }}px {{ block.settings.padding_horizontal }}px;
+  }
+
+  .ai-category-slider__heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    font-weight: {{ block.settings.heading_weight }};
+    color: {{ block.settings.heading_color }};
+    text-align: {{ block.settings.heading_alignment }};
+    margin-bottom: {{ block.settings.heading_spacing }}px;
   }
 
   .ai-category-slider__container-{{ ai_gen_id }} {
@@ -179,6 +168,10 @@
 {% endstyle %}
 
 <category-slider-{{ ai_gen_id }} class="ai-category-slider-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.show_heading and block.settings.heading != blank %}
+    <h2 class="ai-category-slider__heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+  {% endif %}
+  
   <div class="ai-category-slider__container-{{ ai_gen_id }}" data-slider-container>
     {% for i in (1..21) %}
       {% assign collection_key = 'collection_' | append: i %}
@@ -298,6 +291,92 @@
   "name": "Category slider",
   "tag": null,
   "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "Show heading",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading text",
+      "default": "Shop by Category"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 28
+    },
+    {
+      "type": "select",
+      "id": "heading_weight",
+      "label": "Heading weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "heading_spacing",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Spacing below heading",
+      "default": 24
+    },
     {
       "type": "header",
       "content": "Layout"
