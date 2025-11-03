@@ -78,6 +78,13 @@
             "payment_button_background": "",
             "payment_button_text_color": ""
           }
+        },
+        "collapsible_text_7Bb3Yp": {
+          "type": "collapsible_text",
+          "settings": {
+            "title": "Fast shipping",
+            "content": "<p>We process all orders as quickly as possible after confirmation.</p><ul><li><strong>Dhaka City deliveries</strong> usually arrive within <strong>1–2 business days</strong>.</li><li><strong>Outside Dhaka City deliveries</strong> take about <strong>2–3 business days</strong>, depending on the location and courier service.</li></ul><p>You’ll receive a confirmation message once your order is shipped.</p>"
+          }
         }
       },
       "block_order": [
@@ -91,7 +98,8 @@
         "description",
         "variant_picker",
         "quantity_selector",
-        "buy_buttons"
+        "buy_buttons",
+        "collapsible_text_7Bb3Yp"
       ],
       "settings": {
         "full_width": true,
