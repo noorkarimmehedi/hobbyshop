@@ -114,14 +114,6 @@
     "accordion_content_gMjqmz": {
       "type": "accordion-content",
       "blocks": {
-        "item_QVTdhr": {
-          "type": "item",
-          "disabled": true,
-          "settings": {
-            "title": "Question 1",
-            "content": "<p>Write content to help your customers to better understand your products or policies.</p>"
-          }
-        },
         "item_iGyzCX": {
           "type": "item",
           "settings": {
@@ -135,12 +127,19 @@
             "title": "Order tracking",
             "content": "<p>Once your order is shipped, we’ll send you a tracking number or link via SMS.</p><p>You can use this to see your order’s current status and expected delivery date.</p><p>If you don’t receive a tracking update within <strong>24 hours</strong> of ordering, feel free to message us directly.</p>"
           }
+        },
+        "item_QVTdhr": {
+          "type": "item",
+          "settings": {
+            "title": "Get in touch",
+            "content": "<p>You can call us at +8801964437520. We will be happy to assist you.</p>"
+          }
         }
       },
       "block_order": [
-        "item_QVTdhr",
         "item_iGyzCX",
-        "item_BUXxBH"
+        "item_BUXxBH",
+        "item_QVTdhr"
       ],
       "name": "Accordion content",
       "settings": {
