@@ -80,6 +80,27 @@
             "payment_button_background": "",
             "payment_button_text_color": ""
           }
+        },
+        "collapsible_text_NzTQDU": {
+          "type": "collapsible_text",
+          "settings": {
+            "title": "Title",
+            "content": "<p>Share some content to your customers about your products.</p>"
+          }
+        },
+        "collapsible_text_C694Xp": {
+          "type": "collapsible_text",
+          "settings": {
+            "title": "Order tracking",
+            "content": "<p>Once your order is shipped, we’ll send you a tracking number or link via SMS.</p><p>You can use this to see your order’s current status and expected delivery date.</p><p>If you don’t receive a tracking update within <strong>24 hours</strong> of ordering, feel free to message us directly.</p>"
+          }
+        },
+        "collapsible_text_PHAkmP": {
+          "type": "collapsible_text",
+          "settings": {
+            "title": "Get in touch",
+            "content": "<p>You can call us at +8801964437520. We will be happy to assist you.</p>"
+          }
         }
       },
       "block_order": [
@@ -93,7 +114,10 @@
         "description",
         "variant_picker",
         "quantity_selector",
-        "buy_buttons"
+        "buy_buttons",
+        "collapsible_text_NzTQDU",
+        "collapsible_text_C694Xp",
+        "collapsible_text_PHAkmP"
       ],
       "settings": {
         "full_width": true,
