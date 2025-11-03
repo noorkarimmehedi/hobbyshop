@@ -72,6 +72,7 @@
         },
         "buy_buttons": {
           "type": "buy_buttons",
+          "disabled": true,
           "settings": {
             "show_payment_button": true,
             "show_gift_card_recipient": true,
@@ -79,6 +80,18 @@
             "atc_button_text_color": "",
             "payment_button_background": "",
             "payment_button_text_color": ""
+          }
+        },
+        "button_xDkbVQ": {
+          "type": "button",
+          "settings": {
+            "link": "",
+            "text": "Button",
+            "size": "xl",
+            "style": "fill",
+            "stretch": true,
+            "background": "",
+            "text_color": ""
           }
         }
       },
@@ -93,7 +106,8 @@
         "description",
         "variant_picker",
         "quantity_selector",
-        "buy_buttons"
+        "buy_buttons",
+        "button_xDkbVQ"
       ],
       "settings": {
         "full_width": true,
