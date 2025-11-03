@@ -111,6 +111,57 @@
         "input_text_color": ""
       }
     },
+    "accordion_content_gMjqmz": {
+      "type": "accordion-content",
+      "blocks": {
+        "item_QVTdhr": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "title": "Question 1",
+            "content": "<p>Write content to help your customers to better understand your products or policies.</p>"
+          }
+        },
+        "item_iGyzCX": {
+          "type": "item",
+          "settings": {
+            "title": "Fast shipping",
+            "content": "<p>We process all orders as quickly as possible after confirmation.</p><ul><li><strong>Dhaka City deliveries</strong> usually arrive within <strong>1–2 business days</strong>.</li><li><strong>Outside Dhaka City deliveries</strong> take about <strong>2–3 business days</strong>, depending on the location and courier service.</li></ul><p>You’ll receive a confirmation message once your order is shipped.</p>"
+          }
+        },
+        "item_BUXxBH": {
+          "type": "item",
+          "settings": {
+            "title": "Order tracking",
+            "content": "<p>Once your order is shipped, we’ll send you a tracking number or link via SMS.</p><p>You can use this to see your order’s current status and expected delivery date.</p><p>If you don’t receive a tracking update within <strong>24 hours</strong> of ordering, feel free to message us directly.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_QVTdhr",
+        "item_iGyzCX",
+        "item_BUXxBH"
+      ],
+      "name": "Accordion content",
+      "settings": {
+        "full_width": true,
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "button_text": "",
+        "button_url": "",
+        "text_position": "start",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "",
+        "button_text_color": "",
+        "accordion_background": "",
+        "accordion_text_color": ""
+      }
+    },
     "1758906325660f2750": {
       "type": "_blocks",
       "blocks": {
@@ -209,6 +260,7 @@
   },
   "order": [
     "main",
+    "accordion_content_gMjqmz",
     "1758906325660f2750",
     "related-products",
     "17619167484e4ae5a2"
