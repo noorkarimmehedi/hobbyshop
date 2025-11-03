@@ -90,6 +90,27 @@
             "background": "",
             "text_color": ""
           }
+        },
+        "collapsible_text_X64DMq": {
+          "type": "collapsible_text",
+          "settings": {
+            "title": "Fast shipping",
+            "content": "<p>We process all orders as quickly as possible after confirmation.</p><ul><li><strong>Dhaka City deliveries</strong> usually arrive within <strong>1–2 business days</strong>.</li><li><strong>Outside Dhaka City deliveries</strong> take about <strong>2–3 business days</strong>, depending on the location and courier service.</li></ul><p>You’ll receive a confirmation message once your order is shipped.</p>"
+          }
+        },
+        "collapsible_text_EKD8FU": {
+          "type": "collapsible_text",
+          "settings": {
+            "title": "Order tracking",
+            "content": "<p>Once your order is shipped, we’ll send you a tracking number or link via SMS.</p><p>You can use this to see your order’s current status and expected delivery date.</p><p>If you don’t receive a tracking update within <strong>24 hours</strong> of ordering, feel free to message us directly.</p>"
+          }
+        },
+        "collapsible_text_Pb7iEb": {
+          "type": "collapsible_text",
+          "settings": {
+            "title": "Get in touch",
+            "content": "<p>You can call us at +8801964437520. We will be happy to assist you.</p>"
+          }
         }
       },
       "block_order": [
@@ -104,7 +125,10 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "button_xDkbVQ"
+        "button_xDkbVQ",
+        "collapsible_text_X64DMq",
+        "collapsible_text_EKD8FU",
+        "collapsible_text_Pb7iEb"
       ],
       "settings": {
         "full_width": true,
