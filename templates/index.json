@@ -133,6 +133,79 @@
       ],
       "settings": {}
     },
+    "17621588183a142acd": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_fdb90a8_jyQcNT": {
+          "type": "ai_gen_block_fdb90a8",
+          "settings": {
+            "heading": "Shop by category",
+            "heading_alignment": "center",
+            "heading_size": 32,
+            "heading_color": "#1a1a1a",
+            "background_color": "#ffffff",
+            "section_padding_top": 0,
+            "section_padding_bottom": 40,
+            "columns_desktop": 4,
+            "gap_mobile": 12,
+            "gap_desktop": 24,
+            "card_padding": 16,
+            "card_background": "#f9f9f9",
+            "image_aspect_ratio": 105,
+            "text_position": "below",
+            "text_alignment": "center",
+            "show_product_count": false,
+            "title_size": 16,
+            "title_color": "#1a1a1a",
+            "description_size": 13,
+            "description_color": "#666666",
+            "overlay_opacity": 70,
+            "overlay_title_color": "#ffffff",
+            "overlay_description_color": "#ffffff",
+            "border_width": 1,
+            "border_color": "#E0E0E0",
+            "hover_border_color": "#CCCCCC",
+            "border_radius": 8,
+            "shadow_horizontal": 0,
+            "shadow_vertical": 4,
+            "shadow_blur": 8,
+            "shadow_opacity": 0,
+            "collection_1": "all-product",
+            "collection_1_custom_title": "",
+            "collection_1_custom_description": "",
+            "collection_2": "birthday-gifts",
+            "collection_2_custom_title": "",
+            "collection_2_custom_description": "",
+            "collection_3": "couple-gifts",
+            "collection_3_custom_title": "",
+            "collection_3_custom_description": "",
+            "collection_4": "",
+            "collection_4_custom_title": "",
+            "collection_4_custom_description": "",
+            "collection_5": "",
+            "collection_5_custom_title": "",
+            "collection_5_custom_description": "",
+            "collection_6": "",
+            "collection_6_custom_title": "",
+            "collection_6_custom_description": "",
+            "collection_7": "",
+            "collection_7_custom_title": "",
+            "collection_7_custom_description": "",
+            "collection_8": "",
+            "collection_8_custom_title": "",
+            "collection_8_custom_description": "",
+            "collection_9": "",
+            "collection_9_custom_title": "",
+            "collection_9_custom_description": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_fdb90a8_jyQcNT"
+      ],
+      "settings": {}
+    },
     "image-link-blocks": {
       "type": "image-link-blocks",
       "blocks": {
@@ -293,6 +366,7 @@
       "block_order": [
         "ai_gen_block_cfcba58_ePbigR"
       ],
+      "disabled": true,
       "settings": {}
     },
     "featured-collection": {
@@ -1086,6 +1160,7 @@
   "order": [
     "slideshow",
     "176157944692f5db47",
+    "17621588183a142acd",
     "image-link-blocks",
     "scrolling-text",
     "17620670761a223e87",
