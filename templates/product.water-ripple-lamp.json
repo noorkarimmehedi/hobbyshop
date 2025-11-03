@@ -96,8 +96,8 @@
         "collapsible_text_NRbaMP": {
           "type": "collapsible_text",
           "settings": {
-            "title": "Title",
-            "content": "<p>Share some content to your customers about your products.</p>"
+            "title": "Get in touch",
+            "content": "<p>You can call us at +8801964437520. We will be happy to assist you.</p>"
           }
         }
       },
@@ -165,6 +165,7 @@
         "item_BUXxBH",
         "item_QVTdhr"
       ],
+      "disabled": true,
       "name": "Accordion content",
       "settings": {
         "full_width": true,
