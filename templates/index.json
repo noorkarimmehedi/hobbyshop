@@ -202,6 +202,13 @@
         "ai_gen_block_3f11969_FiMxht": {
           "type": "ai_gen_block_3f11969",
           "settings": {
+            "show_heading": true,
+            "heading": "Shop by Category",
+            "heading_size": 28,
+            "heading_weight": "700",
+            "heading_alignment": "center",
+            "heading_color": "#000000",
+            "heading_spacing": 24,
             "columns_mobile": 3,
             "columns_desktop": 5,
             "gap": 8,
@@ -210,8 +217,8 @@
             "padding_horizontal": 16,
             "image_aspect_ratio": 100,
             "border_width": 1,
-            "border_color": "#E0E0E0",
-            "hover_border_color": "#CCCCCC",
+            "border_color": "#e0e0e0",
+            "hover_border_color": "#cccccc",
             "border_radius": 8,
             "shadow_horizontal": 0,
             "shadow_vertical": 4,
@@ -220,7 +227,7 @@
             "title_position": "overlay",
             "title_size": 16,
             "title_weight": "600",
-            "overlay_color": "rgba(0, 0, 0, 0.4)",
+            "overlay_color": "#00000066",
             "overlay_text_color": "#ffffff",
             "text_alignment": "center",
             "text_padding": 12,
@@ -802,6 +809,7 @@
         "item-2": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/O1CN01iEMasZ2AglsBCCr2q_22194021.webp",
             "title": "",
             "heading_tag": "h4",
             "link_url": "shopify://products/stainless-steel-kitchen-sink-holder",
@@ -823,6 +831,7 @@
         "item-3": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/842fdfd1-0736-4eb1-972c-7a3fa503.webp",
             "title": "",
             "heading_tag": "h4",
             "link_url": "shopify://products/glass-food-container-square-glass-jars-with-bamboo-lids",
