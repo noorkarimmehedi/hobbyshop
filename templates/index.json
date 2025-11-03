@@ -133,6 +133,68 @@
       ],
       "settings": {}
     },
+    "17621601143d5772a3": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_e45ed58_Ycdknt": {
+          "type": "ai_gen_block_e45ed58",
+          "settings": {
+            "heading": "Shop by category",
+            "heading_alignment": "center",
+            "heading_size": 32,
+            "heading_color": "#1a1a1a",
+            "section_background": "#ffffff",
+            "padding_top": 40,
+            "padding_bottom": 40,
+            "padding_top_mobile": 24,
+            "padding_bottom_mobile": 0,
+            "title_position": "below",
+            "card_aspect_ratio": 100,
+            "grid_gap": 4,
+            "grid_gap_mobile": 4,
+            "card_background": "#ffffff",
+            "title_size": 16,
+            "title_color": "#1a1a1a",
+            "overlay_text_color": "#ffffff",
+            "overlay_opacity": 50,
+            "border_width": 1,
+            "border_color": "#E0E0E0",
+            "hover_border_color": "#CCCCCC",
+            "border_radius": 8,
+            "shadow_horizontal": 0,
+            "shadow_vertical": 4,
+            "shadow_blur": 8,
+            "shadow_opacity": 0,
+            "collection_1": "all-product",
+            "collection_2": "birthday-gifts",
+            "collection_3": "couple-gifts",
+            "collection_4": "friendship-gifts",
+            "collection_5": "gifts-for-her",
+            "collection_6": "gifts-for-him",
+            "collection_7": "",
+            "collection_8": "",
+            "collection_9": "",
+            "collection_10": "",
+            "collection_11": "",
+            "collection_12": "",
+            "collection_13": "",
+            "collection_14": "",
+            "collection_15": "",
+            "collection_16": "",
+            "collection_17": "",
+            "collection_18": "",
+            "collection_19": "",
+            "collection_20": "",
+            "collection_21": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_e45ed58_Ycdknt"
+      ],
+      "settings": {}
+    },
     "17621588183a142acd": {
       "type": "_blocks",
       "blocks": {
@@ -204,6 +266,7 @@
       "block_order": [
         "ai_gen_block_fdb90a8_jyQcNT"
       ],
+      "disabled": true,
       "settings": {}
     },
     "image-link-blocks": {
@@ -1160,6 +1223,7 @@
   "order": [
     "slideshow",
     "176157944692f5db47",
+    "17621601143d5772a3",
     "17621588183a142acd",
     "image-link-blocks",
     "scrolling-text",
