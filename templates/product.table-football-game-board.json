@@ -131,7 +131,7 @@
         "collapsible_text_Pb7iEb"
       ],
       "custom_css": [
-        "[class*=\"price\"], [class*=\"Price\"], .product__info-wrapper [class*=\"price\"], .product__price, .price-item, .price-item--regular, .price--large, .product-price {font-weight: 900 !important;}"
+        "[class*=\"price\"], [class*=\"Price\"], .product__info-wrapper [class*=\"price\"], .product__price, .price-item, .price-item--regular, .price--large, .product-price {font-weight: 900 !important; }"
       ],
       "settings": {
         "full_width": true,
