@@ -130,6 +130,9 @@
         "collapsible_text_EKD8FU",
         "collapsible_text_Pb7iEb"
       ],
+      "custom_css": [
+        "[class*=\"price\"], [class*=\"Price\"], .product__info-wrapper [class*=\"price\"], .product__price, .price-item, .price-item--regular, .price--large, .product-price {font-weight: 900 !important;}"
+      ],
       "settings": {
         "full_width": true,
         "show_fixed_add_to_cart": true,
