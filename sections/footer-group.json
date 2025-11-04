@@ -92,7 +92,6 @@
       "blocks": {
         "newsletter": {
           "type": "newsletter",
-          "disabled": true,
           "settings": {
             "image_width": 150,
             "heading_size": "h3",
