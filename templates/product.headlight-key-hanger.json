@@ -17,6 +17,10 @@
           "disabled": true,
           "settings": {}
         },
+        "judge_me_reviews_preview_badge_iKmDz4": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
         "title": {
           "type": "title",
           "settings": {
@@ -36,6 +40,7 @@
         },
         "rating": {
           "type": "rating",
+          "disabled": true,
           "settings": {
             "show_empty": false
           }
@@ -105,6 +110,7 @@
       },
       "block_order": [
         "vendor",
+        "judge_me_reviews_preview_badge_iKmDz4",
         "title",
         "badges",
         "price",
