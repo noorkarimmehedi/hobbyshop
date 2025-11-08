@@ -17,6 +17,10 @@
           "disabled": true,
           "settings": {}
         },
+        "judge_me_reviews_preview_badge_aCCgUc": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
         "title": {
           "type": "title",
           "settings": {
@@ -35,6 +39,7 @@
         },
         "rating": {
           "type": "rating",
+          "disabled": true,
           "settings": {
             "show_empty": false
           }
@@ -115,6 +120,7 @@
       },
       "block_order": [
         "vendor",
+        "judge_me_reviews_preview_badge_aCCgUc",
         "title",
         "badges",
         "price",
@@ -131,7 +137,7 @@
         "collapsible_text_Pb7iEb"
       ],
       "custom_css": [
-        "[class*=\"price\"], [class*=\"Price\"], .product__info-wrapper [class*=\"price\"], .product__price, .price-item, .price-item--regular, .price--large, .product-price {font-weight: 900 !important; }"
+        "[class*=\"price\"],[class*=\"Price\"],.product__info-wrapper [class*=\"price\"],.product__price,.price-item,.price-item--regular,.price--large,.product-price {font-weight: 900 !important;}"
       ],
       "settings": {
         "full_width": true,
