@@ -51,7 +51,7 @@
         "description": {
           "type": "description",
           "settings": {
-            "collapse_content": false
+            "collapse_content": true
           }
         },
         "variant_picker": {
@@ -111,6 +111,56 @@
         "text_color": "",
         "input_background": "rgba(0,0,0,0)",
         "input_text_color": ""
+      }
+    },
+    "accordion_content_nLrbXF": {
+      "type": "accordion-content",
+      "blocks": {
+        "item_3XXnch": {
+          "type": "item",
+          "settings": {
+            "title": "",
+            "content": "<p><strong>অটোমেটিক রিচার্জেবল অ্যারোমা ডিফিউজার + ৫০ মি.লি. পারফিউম এসেনশিয়াল অয়েল</strong></p><p><strong>✔️ 6 টি ইউনিক প্রিমিয়াম ফ্লেভার:</strong></p><p>🌸 <strong>1. Gardenia Oil</strong> (গার্ডেনিয়া)</p><p>🏝️ <strong>2. Shangri-La</strong> (শ্যাংগ্রিলা – প্রিমিয়াম রিসোর্ট ফ্রাগ্রেন্স)</p><p>🌿 <strong>3. Lavender</strong> (ল্যাভেন্ডার)</p><p>🏨 <strong>4. Hilton</strong> (হিল্টন – হোটেল স্টাইল সেন্ট)</p><p>🌼 <strong>5. Jasmine</strong> (জেসমিন – রাতের রাণী)</p><p>🌊 <strong>6. Blue Ocean Oil</strong> (ব্লু ওশান – কুল রিফ্রেশিং অ্যাকোয়া সেন্ট)</p>"
+          }
+        },
+        "item_bTyHFE": {
+          "type": "item",
+          "settings": {
+            "title": "Question 2",
+            "content": "<p>Write content to help your customers to better understand your products or policies.</p>"
+          }
+        },
+        "item_qmDWQY": {
+          "type": "item",
+          "settings": {
+            "title": "Question 3",
+            "content": "<p>Write content to help your customers to better understand your products or policies.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_3XXnch",
+        "item_bTyHFE",
+        "item_qmDWQY"
+      ],
+      "name": "Accordion content",
+      "settings": {
+        "full_width": true,
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "button_text": "",
+        "button_url": "",
+        "text_position": "start",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "",
+        "button_text_color": "",
+        "accordion_background": "",
+        "accordion_text_color": ""
       }
     },
     "1758906325660f2750": {
@@ -211,6 +261,7 @@
   },
   "order": [
     "main",
+    "accordion_content_nLrbXF",
     "1758906325660f2750",
     "related-products",
     "17619167484e4ae5a2"
