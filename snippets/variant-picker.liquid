@@ -125,6 +125,12 @@ Supported variables
       display: flex !important;
     }
     
+    /* Force all child elements to center */
+    .variant-picker__option-values .swatch * {
+      text-align: center !important;
+      justify-content: center !important;
+    }
+    
     /* Block swatches - more compact with square corners */
     .variant-picker__option-values .swatch--block {
       padding: 3px 4px !important;
@@ -136,6 +142,11 @@ Supported variables
       justify-content: center !important;
       align-items: center !important;
       display: flex !important;
+    }
+    
+    /* Force block swatch children to center */
+    .variant-picker__option-values .swatch--block * {
+      text-align: center !important;
     }
     
     /* Color swatches - smaller with minimal radius */
