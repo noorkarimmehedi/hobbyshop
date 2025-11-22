@@ -30,6 +30,22 @@ Supported variables
       padding: 4px 0 !important;
     }
     
+    /* Fix right side overflow - ensure grid stays within container */
+    .variant-picker__option > div:last-child,
+    .variant-picker__option-values {
+      max-width: 100% !important;
+      overflow: hidden !important;
+    }
+    
+    /* Remove bleed/scroll-area spacing on mobile */
+    .variant-picker__option .scroll-area.bleed,
+    .variant-picker__option .bleed {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+    
     /* Reduce option info section */
     .variant-picker__option-info {
       margin-bottom: 6px !important;
