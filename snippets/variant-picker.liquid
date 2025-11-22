@@ -30,23 +30,32 @@ Supported variables
       padding: 4px 0 !important;
     }
     
+    /* CRITICAL: Override all wrapper styles that cause overflow */
+    .variant-picker__option-values,
+    .variant-picker__option-values *,
+    .variant-picker [class*="scroll"],
+    .variant-picker [class*="bleed"] {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+    
+    /* Force container to be exactly 100% width */
+    .variant-picker fieldset > div:last-child {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      overflow: hidden !important;
+    }
+    
     /* Fix right side overflow - ensure grid stays within container */
     .variant-picker__option > div:last-child,
     .variant-picker__option-values {
       max-width: 100% !important;
       overflow: hidden !important;
       box-sizing: border-box !important;
-    }
-    
-    /* Remove bleed/scroll-area spacing on mobile - MORE AGGRESSIVE */
-    .variant-picker__option .scroll-area,
-    .variant-picker__option .bleed,
-    .variant-picker__option > div > div {
-      margin: 0 !important;
-      padding: 0 !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-      width: 100% !important;
     }
     
     /* Force parent wrapper to respect boundaries */
