@@ -184,6 +184,27 @@ Supported variables
       line-height: 1 !important;
       text-align: center !important;
       width: 100% !important;
+      display: block !important;
+    }
+    
+    /* Force center alignment on all text elements in swatches */
+    .variant-picker__option-values .swatch span,
+    .variant-picker__option-values .swatch__value,
+    .variant-picker__option-values .swatch input,
+    .variant-picker__option-values button {
+      text-align: center !important;
+      justify-content: center !important;
+      display: flex !important;
+      align-items: center !important;
+      width: 100% !important;
+    }
+    
+    /* Override any input/button default alignment */
+    .variant-picker__option-values input[type="radio"] + label,
+    .variant-picker__option-values label {
+      text-align: center !important;
+      justify-content: center !important;
+      width: 100% !important;
     }
     
     /* Reduce size chart button */
