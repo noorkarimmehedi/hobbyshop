@@ -21,6 +21,56 @@ Supported variables
 {%- assign color_label_list = 'general.label.color' | t | replace: ', ', ',' | downcase | split: ',' -%}
 {%- assign size_label_list = 'general.label.size' | t | replace: ', ', ',' | downcase | split: ',' -%}
 
+<style>
+  /* Mobile variant picker styles - 3 items per row */
+  @media screen and (max-width: 767px) {
+    .variant-picker__option-values {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 8px !important;
+      width: 100%;
+    }
+    
+    .variant-picker__option-values--color {
+      gap: 8px !important;
+    }
+    
+    /* Reduce swatch sizes on mobile */
+    .variant-picker__option-values .swatch {
+      font-size: 0.8rem !important;
+      padding: 8px 6px !important;
+      min-height: 36px !important;
+    }
+    
+    /* Color swatches - smaller on mobile */
+    .variant-picker__option-values .swatch--color {
+      width: 100% !important;
+      height: 36px !important;
+    }
+    
+    /* Media/image swatches */
+    .variant-picker__option-values .swatch--media {
+      height: 60px !important;
+    }
+    
+    .variant-picker__option-values .swatch--media img {
+      height: 100% !important;
+      object-fit: cover !important;
+    }
+    
+    /* Remove scroll behavior on mobile */
+    .variant-picker__option-values.scroll-area {
+      overflow-x: visible !important;
+    }
+    
+    /* Adjust text size in swatches */
+    .variant-picker__option-values .swatch__label {
+      font-size: 0.75rem !important;
+      line-height: 1.2 !important;
+    }
+  }
+</style>
+
 {%- unless product.has_only_default_variant or hide_sold_out_variants and product.available == false -%}
   <variant-picker class="variant-picker" handle="{{ product.handle }}" form="{{ form_id }}" {% if update_url %}update-url{% endif %} {% if hide_sold_out_variants %}hide-sold-out-variants{% endif %}>
     {%- for option in product.options_with_values -%}
