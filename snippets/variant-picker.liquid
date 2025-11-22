@@ -38,17 +38,23 @@ Supported variables
       box-sizing: border-box !important;
     }
     
-    /* Remove bleed/scroll-area spacing on mobile */
-    .variant-picker__option .scroll-area.bleed,
-    .variant-picker__option .bleed,
+    /* Remove bleed/scroll-area spacing on mobile - MORE AGGRESSIVE */
     .variant-picker__option .scroll-area,
-    .variant-picker__option > div {
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-      padding-left: 0 !important;
-      padding-right: 0 !important;
+    .variant-picker__option .bleed,
+    .variant-picker__option > div > div {
+      margin: 0 !important;
+      padding: 0 !important;
       max-width: 100% !important;
       box-sizing: border-box !important;
+      width: 100% !important;
+    }
+    
+    /* Force parent wrapper to respect boundaries */
+    .variant-picker__option > div {
+      padding: 0 !important;
+      margin: 0 !important;
+      width: 100% !important;
+      max-width: 100% !important;
     }
     
     /* Ensure swatches stay within grid */
@@ -75,7 +81,7 @@ Supported variables
       display: grid !important;
       grid-template-columns: repeat(3, 1fr) !important;
       gap: 4px !important;
-      width: calc(100% - 0px) !important;
+      width: 100% !important;
       box-sizing: border-box !important;
       padding: 0 !important;
       margin: 0 !important;
@@ -83,7 +89,16 @@ Supported variables
     
     .variant-picker__option-values--color {
       gap: 4px !important;
-      width: calc(100% - 0px) !important;
+      width: 100% !important;
+    }
+    
+    /* Target the wrapper div that might have bleed class */
+    .variant-picker .bleed.sm\:unbleed,
+    .variant-picker .scroll-area.bleed {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
     }
     
     /* Reduce swatch sizes on mobile - much smaller and square corners */
