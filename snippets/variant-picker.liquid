@@ -75,12 +75,15 @@ Supported variables
       display: grid !important;
       grid-template-columns: repeat(3, 1fr) !important;
       gap: 4px !important;
-      width: 100%;
+      width: calc(100% - 0px) !important;
       box-sizing: border-box !important;
+      padding: 0 !important;
+      margin: 0 !important;
     }
     
     .variant-picker__option-values--color {
       gap: 4px !important;
+      width: calc(100% - 0px) !important;
     }
     
     /* Reduce swatch sizes on mobile - much smaller and square corners */
@@ -90,6 +93,8 @@ Supported variables
       min-height: 24px !important;
       max-height: 24px !important;
       border-radius: 2px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
     }
     
     /* Block swatches - more compact with square corners */
@@ -97,6 +102,8 @@ Supported variables
       padding: 3px 4px !important;
       min-height: 24px !important;
       border-radius: 2px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
     }
     
     /* Color swatches - smaller with minimal radius */
@@ -105,6 +112,7 @@ Supported variables
       height: 24px !important;
       min-height: 24px !important;
       border-radius: 2px !important;
+      box-sizing: border-box !important;
     }
     
     /* Media/image swatches - smaller with square corners */
@@ -112,6 +120,8 @@ Supported variables
       height: 36px !important;
       min-height: 36px !important;
       border-radius: 2px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
     }
     
     .variant-picker__option-values .swatch--media img {
