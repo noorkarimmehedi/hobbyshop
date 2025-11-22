@@ -35,15 +35,26 @@ Supported variables
     .variant-picker__option-values {
       max-width: 100% !important;
       overflow: hidden !important;
+      box-sizing: border-box !important;
     }
     
     /* Remove bleed/scroll-area spacing on mobile */
     .variant-picker__option .scroll-area.bleed,
-    .variant-picker__option .bleed {
+    .variant-picker__option .bleed,
+    .variant-picker__option .scroll-area,
+    .variant-picker__option > div {
       margin-left: 0 !important;
       margin-right: 0 !important;
       padding-left: 0 !important;
       padding-right: 0 !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    
+    /* Ensure swatches stay within grid */
+    .variant-picker__option-values .swatch {
+      max-width: 100% !important;
+      box-sizing: border-box !important;
     }
     
     /* Reduce option info section */
@@ -65,6 +76,7 @@ Supported variables
       grid-template-columns: repeat(3, 1fr) !important;
       gap: 4px !important;
       width: 100%;
+      box-sizing: border-box !important;
     }
     
     .variant-picker__option-values--color {
