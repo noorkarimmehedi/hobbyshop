@@ -47,6 +47,12 @@
           "type": "separator",
           "settings": {}
         },
+        "text_RKpaj8": {
+          "type": "text",
+          "settings": {
+            "text": "<p>অটোমেটিক রিচার্জেবল অ্যারোমা ডিফিউজার + ৫০ মি.লি. প্রিমিয়াম এসেনশিয়াল অয়েল। ৬টি ফ্লেভার, ৪টি স্মার্ট মোড। রুম ফ্রেশ ও প্রিমিয়াম রাখুন।</p>"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "disabled": true,
@@ -89,6 +95,7 @@
         "rating",
         "payment_terms",
         "separator",
+        "text_RKpaj8",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
