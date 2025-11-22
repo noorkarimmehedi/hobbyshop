@@ -18,51 +18,6 @@ Supported variables
 * block: the block itself, for theme-specific options (such as selector types)
 {%- endcomment -%}
 
-<style>
-  @media screen and (max-width: 999px) {
-    .variant-picker__option-values {
-      display: grid !important;
-      grid-template-columns: repeat(3, 1fr) !important;
-      gap: 8px !important;
-      flex-wrap: nowrap !important;
-      overflow: visible !important;
-    }
-    
-    .variant-picker__option-values .block-swatch,
-    .variant-picker__option-values .color-swatch,
-    .variant-picker__option-values > * {
-      width: 100% !important;
-      min-width: 0 !important;
-      flex: none !important;
-    }
-    
-    .variant-picker__option-values .block-swatch label,
-    .variant-picker__option-values .color-swatch label {
-      width: 100% !important;
-      min-width: 0 !important;
-      justify-content: center !important;
-      align-items: center !important;
-      text-align: center !important;
-      border-radius: 4px !important;
-      display: flex !important;
-      min-height: 44px !important;
-    }
-    
-    .variant-picker__option-values .block-swatch label span,
-    .variant-picker__option-values .color-swatch label span {
-      text-align: center !important;
-      width: 100% !important;
-      display: flex !important;
-      justify-content: center !important;
-      align-items: center !important;
-    }
-    
-    .variant-picker__option .scroll-area {
-      overflow: visible !important;
-    }
-  }
-</style>
-
 {%- assign color_label_list = 'general.label.color' | t | replace: ', ', ',' | downcase | split: ',' -%}
 {%- assign size_label_list = 'general.label.size' | t | replace: ', ', ',' | downcase | split: ',' -%}
 
@@ -137,8 +92,8 @@ Supported variables
             </x-popover>
           </div>
         {%- else -%}
-          <div class="variant-picker__option-wrapper">
-            <div data-option-selector class="variant-picker__option-values {% if block.settings.stack_blocks %}wrap{% endif %} {% if selector_type == 'color' and settings.color_swatch_style == 'rectangle' %}variant-picker__option-values--color gap-4{% else %}gap-2{% endif %}">
+          <div {% unless block.settings.stack_blocks %}class="scroll-area bleed sm:unbleed"{% endunless %}>
+            <div data-option-selector class="variant-picker__option-values {% if block.settings.stack_blocks %}wrap{% else %}scroll-area bleed sm:unbleed{% endif %} {% if selector_type == 'color' and settings.color_swatch_style == 'rectangle' %}variant-picker__option-values--color gap-4{% else %}gap-2{% endif %}">
               {%- assign name = 'option' | append: option.position -%}
 
               {%- for value in option.values -%}
