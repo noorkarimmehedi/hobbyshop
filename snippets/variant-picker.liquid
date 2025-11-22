@@ -26,65 +26,70 @@ Supported variables
   @media screen and (max-width: 767px) {
     /* Reduce spacing around entire variant picker */
     .variant-picker__option {
-      margin-bottom: 12px !important;
-      padding: 8px 0 !important;
+      margin-bottom: 8px !important;
+      padding: 4px 0 !important;
     }
     
     /* Reduce option info section */
     .variant-picker__option-info {
-      margin-bottom: 8px !important;
-      font-size: 0.85rem !important;
+      margin-bottom: 6px !important;
+      font-size: 0.8rem !important;
     }
     
     .variant-picker__option-info legend {
-      font-size: 0.85rem !important;
+      font-size: 0.8rem !important;
     }
     
     .variant-picker__option-info variant-option-value {
-      font-size: 0.85rem !important;
+      font-size: 0.8rem !important;
     }
     
     .variant-picker__option-values {
       display: grid !important;
       grid-template-columns: repeat(3, 1fr) !important;
-      gap: 6px !important;
+      gap: 4px !important;
       width: 100%;
     }
     
     .variant-picker__option-values--color {
-      gap: 6px !important;
+      gap: 4px !important;
     }
     
-    /* Reduce swatch sizes on mobile */
+    /* Reduce swatch sizes on mobile - much smaller and square corners */
     .variant-picker__option-values .swatch {
-      font-size: 0.75rem !important;
-      padding: 6px 4px !important;
-      min-height: 32px !important;
-      max-height: 32px !important;
+      font-size: 0.7rem !important;
+      padding: 4px 2px !important;
+      min-height: 28px !important;
+      max-height: 28px !important;
+      border-radius: 2px !important;
     }
     
-    /* Block swatches - more compact */
+    /* Block swatches - more compact with square corners */
     .variant-picker__option-values .swatch--block {
-      padding: 6px 8px !important;
-      min-height: 32px !important;
+      padding: 4px 6px !important;
+      min-height: 28px !important;
+      border-radius: 2px !important;
     }
     
-    /* Color swatches - smaller on mobile */
+    /* Color swatches - smaller with minimal radius */
     .variant-picker__option-values .swatch--color {
       width: 100% !important;
-      height: 32px !important;
-      min-height: 32px !important;
+      height: 28px !important;
+      min-height: 28px !important;
+      border-radius: 2px !important;
     }
     
-    /* Media/image swatches */
+    /* Media/image swatches - smaller with square corners */
     .variant-picker__option-values .swatch--media {
-      height: 50px !important;
-      min-height: 50px !important;
+      height: 40px !important;
+      min-height: 40px !important;
+      border-radius: 2px !important;
     }
     
     .variant-picker__option-values .swatch--media img {
       height: 100% !important;
       object-fit: cover !important;
+      border-radius: 2px !important;
     }
     
     /* Remove scroll behavior on mobile */
@@ -92,15 +97,20 @@ Supported variables
       overflow-x: visible !important;
     }
     
-    /* Adjust text size in swatches */
+    /* Adjust text size in swatches - smaller */
     .variant-picker__option-values .swatch__label {
-      font-size: 0.7rem !important;
-      line-height: 1.1 !important;
+      font-size: 0.65rem !important;
+      line-height: 1 !important;
     }
     
     /* Reduce size chart button */
     .variant-picker__option-info button {
-      font-size: 0.75rem !important;
+      font-size: 0.7rem !important;
+    }
+    
+    /* Remove any rounded corners from wrapper elements */
+    .variant-picker__option-values > * {
+      border-radius: 2px !important;
     }
   }
 </style>
