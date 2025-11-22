@@ -30,6 +30,22 @@ Supported variables
       padding: 4px 0 !important;
     }
     
+    /* Ensure consistent right-side spacing alignment */
+    .variant-picker__option > div:last-child,
+    .variant-picker__option-values,
+    .scroll-area {
+      padding-right: 0 !important;
+      margin-right: 0 !important;
+    }
+    
+    /* Remove bleed class effects on mobile for consistent spacing */
+    .bleed {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+    
     /* Reduce option info section */
     .variant-picker__option-info {
       margin-bottom: 6px !important;
